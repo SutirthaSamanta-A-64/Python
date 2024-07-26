@@ -1,0 +1,357 @@
+
+
+Q1)Celsius to Fahrenheit
+"""
+
+celsius_temp = input("Emter temperature in celsius:")
+celsius_temp = float(celsius_temp)
+fahrenheit_temp =celsius_temp*1.8+32
+
+print("The Fahrenheit equivalent of celsius_temp = ", fahrenheit_temp)
+
+"""Q2)Swapping two numbers"""
+
+n1=input("Enter first number:")
+n2=input("Enter second number:")
+temp=n1
+n1=n2
+n2=temp
+print("First number=",n1)
+print("Second number=",n2)
+
+"""Q3)Leap year or not"""
+
+year=int(input("Enter a year:"))
+if(year%4==0):
+  print("Leap year")
+else:
+  print("Not a leap year")
+
+"""Q4)Reverse of a Number"""
+
+n=int(input("Enter a number:"))
+rev=0
+while(n>0):
+  dig=n%10
+  rev=rev*10+dig
+  n=n//10
+print("Reverse of the number:",rev)
+
+"""      Q5)WAP to find factors of a given number"""
+
+def find_factors(number):
+    factors = []
+    # Loop through all numbers from 1 to the number itself
+    for i in range(1, number + 1):
+        # Check if i is a factor of the number
+        if number % i == 0:
+            factors.append(i)  # Add i to the list of factors
+    return factors
+
+# Example usage:
+number = int(input("Enter a number: "))
+print(f"The factors of {number} are: {find_factors(number)}")
+
+Q6)pRIME NUMBER
+
+def is_prime(num):
+    """ Function to check if a number is prime """
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def prime_series_upto_n(n):
+    """ Function to generate prime numbers up to n """
+    prime_numbers = []
+    for number in range(2, n + 1):
+        if is_prime(number):
+            prime_numbers.append(number)
+    return prime_numbers
+
+# Example usage:
+n = int(input("Enter a number (n): "))
+prime_list = prime_series_upto_n(n)
+print(f"Prime numbers up to {n} are: {prime_list}")
+
+"""Q7)Write a program which makes use of function to display all such numbers which are
+divisible by 7 but are not a multiple of 5, between 1000 and 2000.
+
+"""
+
+def display_numbers():
+    """ Function to display numbers between 1000 and 2000 divisible by 7 but not a multiple of 5 """
+    numbers = []
+    for num in range(1000, 2001):
+        if num % 7 == 0 and num % 5 != 0:
+            numbers.append(num)
+    return numbers
+
+# Calling the function and printing the result
+result = display_numbers()
+print("Numbers between 1000 and 2000 divisible by 7 but not a multiple of 5:")
+print(result)
+
+"""Q8)WAP to check whether a number is a palindrome or not
+
+"""
+
+def is_palindrome(number):
+    """ Function to check if a number is palindrome """
+    # Convert number to string to easily check palindrome property
+    num_str = str(number)
+    # Check if the number is equal to its reverse
+    if num_str == num_str[::-1]:
+        return True
+    else:
+        return False
+
+# Example usage:
+num = int(input("Enter a number: "))
+if is_palindrome(num):
+    print(f"{num} is a palindrome.")
+else:
+    print(f"{num} is not a palindrome.")
+
+"""  Q9) WAP to check whether a)is a perfect number b)is an Armstrong number
+
+"""
+
+def is_perfect_number(num):
+    """ Function to check if a number is a perfect number """
+    if num <= 0:
+        return False
+
+    sum_of_divisors = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum_of_divisors += i
+
+    return sum_of_divisors == num
+
+def is_armstrong_number(num):
+    """ Function to check if a number is an Armstrong number """
+    if num <= 0:
+        return False
+
+    # Convert number to string to iterate over each digit
+    num_str = str(num)
+    num_digits = len(num_str)
+    sum_of_powers = sum(int(digit)**num_digits for digit in num_str)
+
+    return sum_of_powers == num
+
+def check_numbers(num):
+    """ Function to check if a number is both perfect and Armstrong """
+    is_perfect = is_perfect_number(num)
+    is_armstrong = is_armstrong_number(num)
+
+    if is_perfect:
+        print(f"{num} is a perfect number.")
+    else:
+        print(f"{num} is not a perfect number.")
+
+    if is_armstrong:
+        print(f"{num} is an Armstrong number.")
+    else:
+        print(f"{num} is not an Armstrong number.")
+
+# Example usage:
+number = int(input("Enter a number: "))
+check_numbers(number)
+
+"""Q10)WAP to generate the Fibonacci series upto n.
+Complete
+"""
+
+def fibonacci_series_upto_n(n):
+    """ Function to generate Fibonacci series up to n """
+    fibonacci_series = []
+    # Initial Fibonacci numbers
+    a, b = 0, 1
+    while a <= n:
+        fibonacci_series.append(a)
+        a, b = b, a + b
+    return fibonacci_series
+
+# Example usage:
+n = int(input("Enter a number (n): "))
+fibonacci_list = fibonacci_series_upto_n(n)
+print(f"Fibonacci series up to {n}:")
+print(fibonacci_list)
+
+"""1. Write a program to print your name.
+
+"""
+
+# Python program to print your name
+Name=(input("Enter your name:"))
+print( Name)
+
+"""
+2. Write a Java program to add two numbers
+"""
+
+# Python program to add two numbers
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+sum = num1 + num2
+print("Sum:", sum)
+
+"""
+3. Write a Java program to change temperature from Celsius to Fahrenheit."""
+
+# Python program to convert Celsius to Fahrenheit
+celsius = float(input("Enter temperature in Celsius: "))
+
+fahrenheit = (celsius * 9/5) + 32
+print("Temperature in Fahrenheit:", fahrenheit)
+
+"""4. Write a Java program to change temperature from Fahrenheit to Celsius.
+
+"""
+
+fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+
+celsius = (fahrenheit - 32) * 5/9
+print("Temperature in Celsius:", celsius)
+
+"""5. Write a Java program to find area and perimeter of a rectangle.
+
+"""
+
+width = float(input("Enter width of rectangle: "))
+height = float(input("Enter height of rectangle: "))
+
+area = width * height
+perimeter = 2 * (width + height)
+
+print("Area of rectangle:", area)
+print("Perimeter of rectangle:", perimeter)
+
+"""6. Write a Java program to find area and perimeter of a circle.
+
+"""
+
+import math
+
+radius = float(input("Enter radius of circle: "))
+
+area = math.pi * radius * radius
+perimeter = 2 * math.pi * radius
+
+print("Area of circle:", area)
+print("Perimeter of circle:", perimeter)
+
+"""7. Write a Java Program to display whether a number is odd or even.
+
+"""
+
+number = int(input("Enter a number: "))
+
+if number % 2 == 0:
+    print(number, "is even.")
+else:
+    print(number, "is odd.")
+
+"""8. Write a Java Program to check if a number is Positive or Negative.
+
+"""
+
+number = float(input("Enter a number: "))
+
+if number > 0:
+    print(number, "is positive.")
+elif number < 0:
+    print(number, "is negative.")
+else:
+    print(number, "is zero.")
+
+"""9. Write a Java program to find maximum of three numbers.
+
+"""
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+
+max_num = max(num1, num2, num3)
+print("Maximum number is:", max_num)
+
+"""10. Write a Java program to swap two numbers.
+
+"""
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+print("Before swapping:")
+print("First number =", num1)
+print("Second number =", num2)
+
+
+num1, num2 = num2, num1
+
+print("After swapping:")
+print("First number =", num1)
+print("Second number =", num2)
+
+
+
+"""Q1)SUM OF SQUARE OF SQUAREROOT  OF ANY THREE NUMBERS."""
+
+import math
+
+def sum_of_square_roots(a, b, c):
+    sqrt_a = math.sqrt(a)
+    sqrt_b = math.sqrt(b)
+    sqrt_c = math.sqrt(c)
+
+    sum_sqrt = sqrt_a + sqrt_b + sqrt_c
+
+    return sum_sqrt
+
+
+num1 = 4
+num2 = 9
+num3 = 16
+
+result = sum_of_square_roots(num1, num2, num3)
+print(f"The sum of square roots of {num1}, {num2}, and {num3} is: {result}")
+
+"""Q2)TO SOLVE QUADRATIC EQUATION"""
+
+import math
+
+def solve_quadratic(a, b, c):
+
+    discriminant = b**2 - 4*a*c
+
+    # Check if the discriminant is positive, zero, or negative to determine the nature of roots
+    if discriminant > 0:
+        # Two real and distinct roots
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return root1, root2
+    elif discriminant == 0:
+        # One real root (both roots are the same)
+        root = -b / (2*a)
+        return root, root
+    else:
+        # Complex roots (discriminant is negative)
+        real_part = -b / (2*a)
+        imaginary_part = math.sqrt(abs(discriminant)) / (2*a)
+        root1 = complex(real_part, imaginary_part)
+        root2 = complex(real_part, -imaginary_part)
+        return root1, root2
+
+# Example usage:
+a = 1
+b = -3
+c = 2
+
+roots = solve_quadratic(a, b, c)
+print(f"The roots of the equation {a}x^2 + {b}x + {c} = 0 are: {roots}")
