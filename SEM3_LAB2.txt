@@ -1,0 +1,135 @@
+Q1. To find the sum of square root of any three numbers
+Ans 1: 
+import math
+
+def sum_of_square_roots(a, b, c):
+    return math.sqrt(a) + math.sqrt(b) + math.sqrt(c)
+
+Q2. To solve the quadratic equation
+Ans2: 
+import math
+
+def solve_quadratic(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return (root1, root2)
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return (root,)
+    else:
+        return "Complex roots"
+
+Q3. To find the GCD of Two Numbers
+Ans 3:
+import math
+
+def gcd(a, b):
+    return math.gcd(a, b)
+
+Q4. Compute a) 5 to the power of 8 b) Square root of 400 c) Exponent of 5 d) Logarithm of 625 base 5
+Ans 4:
+import math
+
+a = 5 ** 8
+b = math.sqrt(400)
+c = math.exp(5)
+d = math.log(625, 5)
+
+print(a)  # Output: 390625
+print(b)  # Output: 20.0
+print(c)  # Output: 148.4131591025766
+print(d)  # Output: 4.0
+
+Q5. Compute a) sin of 60 degree b) cos of pi c) sin(0.8660254037844386) d) tan of 90 degree
+Ans 5:
+import math
+
+a = math.sin(math.radians(60))  # Convert degrees to radians
+b = math.cos(math.pi)
+c = math.sin(0.8660254037844386)
+d = math.tan(math.radians(90))  # tan(90) is undefined, will result in an error
+
+print(a)  # Output: 0.8660254037844386
+print(b)  # Output: -1.0
+print(c)  # Output: 0.9999999999999999
+try:
+    print(d)
+except Exception as e:
+    print(e)  # Output: tan(90) is undefined
+
+Q6. Define a sum function with two parameters and call the function
+Ans 6:
+def sum(a, b):
+    return a + b
+
+
+Q7. WAP to reverse a given string
+Ans 7:
+def reverse_string(s):
+    return s[::-1]
+
+Q8. Write a function to calculate the power of a number using recursion
+Ans 8:
+def power(base, exp):
+    if exp == 0:
+        return 1
+    else:
+        return base * power(base, exp - 1)
+
+Q9. Convert decimal number to Binary.
+Ans9:
+def decimal_to_binary(n):
+    return bin(n).replace("0b", "")
+
+
+Q10. WAP in Python to check if a number is Krishnamurthy number.
+Ans 10:
+def is_krishnamurthy(n):
+    def factorial(x):
+        return 1 if x == 0 else x * factorial(x - 1)
+    
+    sum_of_factorials = sum(factorial(int(digit)) for digit in str(n))
+    return sum_of_factorials == n
+
+
+Q11. WAP in Python to find the sum of the digits of a number.
+Ans 11:
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+Q12. WAP in Python that prompts the user to input a number and prints its multiplication table
+Ans 12:
+number = int(input("Enter a number: "))
+
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")
+
+Q13. WAP in Python to print the first 6 terms of a geometric sequence starting with 2 and having a common ratio of 3.
+Ans 13:
+def geometric_sequence(start, ratio, terms):
+    return [start * (ratio ** i) for i in range(terms)]
+
+Q14. Print the series upto N terms: 1, 2, 6, 24, 120, 720,......
+Ans 14:
+def factorial_series(n):
+    series = []
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+        series.append(fact)
+    return series
+
+Q15. WAP in Python that prompts the user to enter a base number and an exponent, and then calculates the power of the base to the exponent. The program should not use the exponentiation operator or the math.pow() function.
+Ans 15:
+def power(base, exp):
+    result = 1
+    for _ in range(exp):
+        result *= base
+    return result
+
+base = int(input("Enter the base number: "))
+exp = int(input("Enter the exponent: "))
+result = power(base, exp)
+print(result)
